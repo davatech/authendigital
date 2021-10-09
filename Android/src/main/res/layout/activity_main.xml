@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="407dp"
+        android:layout_height="214dp"
+        android:background="#070707"
+        app:layout_constraintBottom_toBottomOf="@+id/textResponse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:onClick="APIopen"
+        android:text="Open"
+        android:backgroundTint="@color/teal_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUser" />
+
+    <TextView
+        android:id="@+id/textResponse"
+        android:layout_width="392dp"
+        android:layout_height="215dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="true"
+        android:fontFamily="monospace"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="Response"
+        android:textAlignment="textStart"
+        android:textColor="#07A40D"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Response" />
+
+    <TextView
+        android:id="@+id/textAuthenticationToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:editable="true"
+        android:enabled="true"
+        android:fontFamily="monospace"
+        android:selectAllOnFocus="true"
+        android:text="Not set"
+        android:textColor="@android:color/darker_gray"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="@+id/textViewAuthentication"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAuthentication" />
+
+    <TextView
+        android:id="@+id/textSessionToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:editable="true"
+        android:fontFamily="monospace"
+        android:selectAllOnFocus="true"
+        android:text="Not set"
+        android:textColor="@android:color/darker_gray"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="@+id/textViewSession"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSession" />
+
+    <CheckBox
+        android:id="@+id/openCheckBox"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:text="Check for activation ( open )"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        tools:text="Check for activation ( open )" />
+
+    <Button
+        android:id="@+id/activateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:enabled="true"
+        android:onClick="SDKactivate"
+        android:text="Activate"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/authenticateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:onClick="SDKauthenticate"
+        android:text="Authenticate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/insertButton" />
+
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="SDKinsert"
+        android:text="Insert"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/authenticateButton"
+        app:layout_constraintStart_toEndOf="@+id/activateButton"
+        app:layout_constraintTop_toTopOf="@+id/activateButton" />
+
+    <TextView
+        android:id="@+id/textLibVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0.0"
+        android:textColor="#6200EE"
+        app:layout_constraintEnd_toEndOf="@+id/textResponse"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textViewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:editable="false"
+        android:fontFamily="sans-serif-black"
+        android:text="USER:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:editable="true"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:text="alex"
+        android:textColor="@android:color/darker_gray"
+        android:textIsSelectable="true"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewUser"
+        app:layout_constraintTop_toTopOf="@+id/textViewUser" />
+
+    <TextView
+        android:id="@+id/textViewSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Session Token"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAuthentication"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAuthentication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="38dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Authentication Token"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/textViewSession" />
+
+    <Button
+        android:id="@+id/buttonList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="APIlist"
+        android:text="LIST DEVICES"
+        app:layout_constraintStart_toStartOf="@+id/activateButton"
+        app:layout_constraintTop_toBottomOf="@+id/activateButton" />
+
+    <Button
+        android:id="@+id/buttonNewDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="APInewDevice"
+        android:text="NEW DEVICE"
+        app:layout_constraintEnd_toEndOf="@+id/authenticateButton"
+        app:layout_constraintTop_toTopOf="@+id/buttonList" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
